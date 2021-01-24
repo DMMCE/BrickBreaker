@@ -20,7 +20,7 @@ public class MachineShooterManager : MonoBehaviour
     bool ShootingWithArrow = true;
     private void Awake()
     {
-
+        RemainBalls = LocalDataManager.StartingBalls;
         GetBasketManager.NumberOfBallToShow(RemainBalls);
         GetBalls = new List<Ball>();
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class blockgifts : MonoBehaviour
 {
-    public enum BlockGifts {  machineLarger=0, threeshoot=1, twoshoot = 2, oneShoot =3,verticallaser=4,horizantallazer=5 ,none = 6}
+    public enum BlockGifts {  machineLarger=0, threeshoot=1, twoshoot = 2, oneShoot =3,verticallaser=4,horizantallazer=5,coinsbag =6,none = 7}
 
     private  static BlockGifts GetGifts;
     public static BlockGifts Get_RandomGift()

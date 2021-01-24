@@ -13,33 +13,39 @@ public class BlockRowManager : MonoBehaviour
     Block[] GetAllprefabs;
 
     [SerializeField]
-    List<Block> GetBlock;
+    List<Block> GetBlocks;
 
     int randomNumberofdestroyedBlocks;
     void Start()
     {
-       
+        InvokeRepeating("invoke_CheckUnbreakBlocks" , 1f , 1f);
         for (int i = 0 ; i < maximumNumberofBlockPerRow ; i++)
         {
             creatBlock();
         }
         randomNumberofdestroyedBlocks = Random.Range(0 , 10);
-        GetBlock = getAllBlocksChildren();
+        GetBlocks = getAllBlocksChildren();
 
-        for (int i = 0 ; i < GetBlock.Count ; i++)
+        for (int i = 0 ; i < GetBlocks.Count ; i++)
         {
             float rand = Random.value ;
             if(rand >= 0.4f && randomNumberofdestroyedBlocks > 0)
             {
  
-                Destroy(GetBlock[i].gameObject);
-                GetBlock.RemoveAt(i);
+                Destroy(GetBlocks[i].gameObject);
+                GetBlocks.RemoveAt(i);
                 randomNumberofdestroyedBlocks--;
             }
             else
             {
 
             }
+        }
+    }
+    void invoke_CheckUnbreakBlocks()
+    {
+        if (allBlocksAreUnbreakable()) {
+            Destroy(gameObject);
         }
     }
     void creatBlock()
@@ -60,8 +66,24 @@ public class BlockRowManager : MonoBehaviour
     {
         for (int i = 0 ; i < transform.childCount ; i++)
         {
-            GetBlock.Add(transform.GetChild(i).GetComponent<Block>());
+            GetBlocks.Add(transform.GetChild(i).GetComponent<Block>());
         }
-        return GetBlock;
+        return GetBlocks;
+    }
+      
+    public bool allBlocksAreUnbreakable()
+    {
+        bool AllmyBlocksAreUnbreakable = true;
+        foreach (var item in GetBlocks)
+        {
+            if (item)
+            {
+                if (item.GetComponent<UnBreakerBlock>() == null)
+                {
+                    AllmyBlocksAreUnbreakable = false;
+                }
+            }
+        }
+        return AllmyBlocksAreUnbreakable;
     }
 }

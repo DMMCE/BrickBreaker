@@ -7,9 +7,9 @@ public class BasketManager : MonoBehaviour
     [SerializeField]
     ParticleSystem GetParticle; 
     [SerializeField]
-    BallinBasket[] getBallinBaskets; 
-    
-  
+    BallinBasket[] getBallinBaskets;
+
+ 
 
     public void NumberOfBallToShow(int length)
 

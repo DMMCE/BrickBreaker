@@ -1,2 +1,2 @@
 # BrickBreaker
-This gamewas made in 72 hours. I gope you enjoy it.
+This gamewas made in 72 hours. I hope you enjoy it.

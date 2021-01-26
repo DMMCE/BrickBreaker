@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 730448009}
   - component: {fileID: 730448011}
   - component: {fileID: 1285152616706883363}
-  m_Layer: 0
+  - component: {fileID: 691208031113503540}
+  m_Layer: 9
   m_Name: Machine Collider
   m_TagString: MachineCollider
   m_Icon: {fileID: 0}
@@ -69,6 +70,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 3, y: 0.8}
   m_Direction: 1
+--- !u!114 &691208031113503540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730448008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5661ecc6e5e5c2240aec0e0f6b896241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToMove: {fileID: 3723515686377064305}
+  GetMachineMovment: {fileID: 5191861299665249489}
 --- !u!1 &137086318290782148
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +371,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292976594440465499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -379,6 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   X_Limit: 8.5
   GetCollider: {fileID: 1285152616706883363}
+  GetMachineCollider: {fileID: 691208031113503540}
 --- !u!50 &4434163524409368787
 Rigidbody2D:
   serializedVersion: 4
